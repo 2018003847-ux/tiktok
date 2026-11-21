@@ -1,5 +1,5 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
-<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="TikTok"><meta name="theme-color" content="#000000"><title>TikTok</title>
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="TikTok"><meta name="theme-color" content="#000000"><link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-180.png"><title>TikTok</title>
 <style>
 *{box-sizing:border-box;margin:0;-webkit-tap-highlight-color:transparent;-webkit-touch-callout:none}html,body{height:100%;background:#000;font:16px/21px -apple-system,BlinkMacSystemFont,"SF Pro Text",Helvetica,Arial,sans-serif;color:#fff;overflow:hidden;user-select:none}
 body{display:flex;justify-content:center;align-items:center}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}img,svg{display:block}
@@ -71,4 +71,5 @@ const now=Date.now(),r=app.getBoundingClientRect();if(now-lt<320){burst(e.client
 setTimeout(()=>{if(lt&&Date.now()-lt>=300){lt=0;if(v.paused){v.play();paused=false;$('#pp').classList.remove('show')}else{v.pause();paused=true;$('#pp').classList.add('show')}}},330)});
 document.addEventListener('pointerdown',()=>{if(!unm){unm=1;v.muted=false;v.play().catch(()=>{v.muted=true;v.play()})}},{once:true});
 draw();
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script></body></html>
